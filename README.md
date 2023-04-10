@@ -2,6 +2,8 @@
 
 ---
 
+**Docs:** <https://giraycoskun.github.io/puzzle-solver-api/>
+
 ## Architecture
 
 ---

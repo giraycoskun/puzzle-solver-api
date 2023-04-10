@@ -1,4 +1,46 @@
 # Puzzle Solver API
 
-giraycoskun
+---
+
+## Architecture
+
+---
+
+![Architecture](https://drive.google.com/uc?export=view&id=1QvKGTU_ZbMEFSL-eMyVMGwQP9Y14DxB2)
+
+## Docker
+
+---
+
+## Local Development
+
+---
+
+```bash
+git clone <>
+```
+
+```bash
+poetry install
+```
+
+```bash
+poetry shell
+```
+
+```bash
+mkdocs serve
+```
+
+```bash
+uvicorn src.main:app --reload --reload-dir src  --port 8000
+```
+
+## Package References
+
+---
+
+- <https://fastapi.tiangolo.com/>
+- <https://docs.python.org/3/library/typing.html>
+- <https://docs.pydantic.dev/>
 

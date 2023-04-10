@@ -25,6 +25,10 @@ poetry install
 ```
 
 ```bash
+poetry export -f requirements.txt --output requirements.txt --with dev,docs
+```
+
+```bash
 poetry shell
 ```
 

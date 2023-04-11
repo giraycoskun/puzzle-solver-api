@@ -8,11 +8,22 @@
 
 ---
 
-![Architecture](https://drive.google.com/uc?export=view&id=1QvKGTU_ZbMEFSL-eMyVMGwQP9Y14DxB2)
+![Architecture](https://drive.google.com/uc?export=view&id=1K-icfWPo8eOZ32kPgDY757rIN_uBOYhu)
 
 ## Docker
 
 ---
+
+**DockerHub:** <https://hub.docker.com/repository/docker/giraycoskun/puzzle-solver>
+
+```bash
+docker build -t puzzle-solver-api .
+docker run -p 80:80 puzzle-solver-api
+```
+
+```bash
+docker pull giraycoskun/puzzle-solver:latest
+```
 
 ## Local Development
 
@@ -49,4 +60,3 @@ uvicorn src.main:app --reload --reload-dir src  --port 8000
 - <https://fastapi.tiangolo.com/>
 - <https://docs.python.org/3/library/typing.html>
 - <https://docs.pydantic.dev/>
-

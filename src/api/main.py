@@ -10,17 +10,8 @@ from src.api.repository.rabbitmq_repository import RabbitMQRepository
 
 logger.info("ENVIRONMENT: {env}", env=ENVIRONMENT)
 
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    try:
-        rabbitmq_repository = RabbitMQRepository.get_instance()
-    except Exception as e:
-        logger.error("Error while connecting to RabbitMQ: {error}", error=e)
-    yield
-    rabbitmq_repository.close()
 
-
-app = FastAPI(lifespan=lifespan)
+app = FastAPI()
 
 app.include_router(status.router)
 app.include_router(subscription.router)

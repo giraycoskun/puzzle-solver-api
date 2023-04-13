@@ -1,5 +1,8 @@
-from fastapi import APIRouter, Response, status
-from pydantic import BaseModel, constr
+from fastapi import APIRouter, Response, status, Depends
+from typing import Annotated
+
+from src.api.service.puzzle_service import PuzzleService
+from src.api.repository.models import PuzzleIn
 
 router = APIRouter(
     prefix="/puzzle",
@@ -7,16 +10,11 @@ router = APIRouter(
     responses={status.HTTP_201_CREATED: {"description": "Puzzle created successfully."}}
 )
 
-PUZZLES = [
-    "hashi",
-    "maze-cover"
-]
-
-class Puzzle(BaseModel):
-    name: str
-    description: str
-    puzzle: constr(regex="|".join(PUZZLES))
-
 @router.post("/")
-async def create_puzzle(puzzle: Puzzle) -> Response:
-    return Response(status_code=status.HTTP_201_CREATED)
+async def create_puzzle(puzzle: PuzzleIn, puzzle_service: Annotated[PuzzleService, Depends()]) -> Response:
+    result = await puzzle_service.create_puzzle(puzzle)
+    if result:
+        response = Response(status_code=status.HTTP_201_CREATED)
+    else:
+        response = Response(status_code=status.HTTP_503_SERVICE_UNAVAILABLE)
+    return response

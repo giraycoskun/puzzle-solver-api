@@ -19,6 +19,10 @@ plugins:
       handlers:
         python:
           paths: ['src']  # search packages in the src folder
+          options:
+            docstring_style: "google"
+            show_root_heading: true
+            show_if_no_docstring: true
 
 markdown_extensions:
   - tables
@@ -29,4 +33,12 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Setup: setup.md
+  - Architecture: architecture.md
   - Search: search.md
+  - Constrain-Satisfaction-Problem: csp.md
+  - Reference: 
+    - reference/reference.md
+    - reference/api.md
+    - reference/solver.md
+    - reference/subscription.md

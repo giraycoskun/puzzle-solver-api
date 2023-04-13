@@ -21,4 +21,4 @@ __function__ UNIFORM-COST-SEARCH(_problem_) __returns__ a solution, or failure
 ---
 __Figure 3.11__ Uniform-cost search on a graph. Finds optimal paths for problems with varying step costs. __From__ <http://aima.cs.berkeley.edu/global-index.html>
 
-::: solvers.search.ucs.UniformCostSearch
+::: solver.search.ucs.UniformCostSearch

@@ -8,7 +8,7 @@
 
 ---
 
-![Architecture](https://drive.google.com/uc?export=view&id=1K-icfWPo8eOZ32kPgDY757rIN_uBOYhu)
+![Architecture](https://drive.google.com/uc?export=view&id=1QYXgxS4O345L4OlKY-ga459XqkO8IiLi)
 
 ## Docker
 
@@ -50,6 +50,10 @@ mkdocs serve
 ```
 
 ```bash
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.11.13-management
+```
+
+```bash
 uvicorn src.main:app --reload --reload-dir src  --port 8000
 ```
 
@@ -60,3 +64,4 @@ uvicorn src.main:app --reload --reload-dir src  --port 8000
 - <https://fastapi.tiangolo.com/>
 - <https://docs.python.org/3/library/typing.html>
 - <https://docs.pydantic.dev/>
+- <https://pika.readthedocs.io/en/stable/index.html>

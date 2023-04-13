@@ -1,6 +1,6 @@
 # Reference
 
-- REST API
-- Solver
-- Subscription
+- [REST API](../api)
+- [Solver](../solver)
+- [Subscription](../subscription)
   

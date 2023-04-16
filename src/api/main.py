@@ -11,7 +11,13 @@ from src.api.repository.rabbitmq_repository import RabbitMQRepository
 logger.info("ENVIRONMENT: {env}", env=ENVIRONMENT)
 
 
-app = FastAPI()
+app = FastAPI(
+    title="Puzzle Solver API",
+    description="A puzzle solver api (FastAPI Framework) via CSP and search algorithms.",
+    version="0.1.0",
+    docs_url="/docs",
+    redoc_url="/redoc"
+)
 
 app.include_router(status.router)
 app.include_router(subscription.router)
